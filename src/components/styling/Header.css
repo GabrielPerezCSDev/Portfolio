@@ -1,33 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+/* Header container */
 .header {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   background-color: #282c34;  /* Example background color */
-  padding: 20px;
+  padding: 10px;
 
 }
 
+/* Title styles */
 .header-title h1,
  .header-title h2 {
  display: flex;
   color: #00FF00;  /* Font color for the header title */
   font-family: 'Press Start 2P', cursive;  /* Font family */
-  font-size: 2rem;  /* Font size */
+  font-size: calc(1.5vw + 1.5rem);  /* Adjust based on viewport width */
   margin: 0;
 }
 .header-title h2 {
-    font-size: 1rem;
+    font-size: calc(1vw + 1rem);  /* Adjust based on viewport width */
+
 }
 
+/* Navigation styles */
 .header-nav ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
   display: flex;
   justify-content: center;
-  font-size: 1rem;
+  color: #778899;  /* Font color for navigation links */
+  font-size: calc(0.75vw + 0.75rem);  /* Adjust based on viewport width */
 }
 
 .header-nav li {
@@ -36,11 +41,11 @@
 }
 
 .nav-link {
-  color: #ffffff;  /* Font color for navigation links */
   text-decoration: none;
   font-family: 'Press Start 2P', cursive;  /* Font family for links */
+   color: #00FF00;  /* Font color for navigation links */
 }
 
 .nav-link:hover {
-  color: #61dafb;  /* Font color on hover */
+  color: #00FF00;  /* Font color on hover */
 }
