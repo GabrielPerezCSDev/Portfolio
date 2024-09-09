@@ -21,7 +21,6 @@
 }
 .header-title h2 {
     font-size: calc(1vw + 1rem);  /* Adjust based on viewport width */
-
 }
 
 /* Navigation styles */
@@ -33,6 +32,7 @@
   justify-content: center;
   color: #778899;  /* Font color for navigation links */
   font-size: calc(0.75vw + 0.75rem);  /* Adjust based on viewport width */
+  padding: 10px;
 }
 
 .header-nav li {
