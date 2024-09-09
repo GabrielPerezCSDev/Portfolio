@@ -1,5 +1,5 @@
 import React from 'react';
-import '../tsx/Header.css'; // Styling
+import '../styling/Header.css'; // Styling
 
 const Header: React.FC = () => {
   return (
