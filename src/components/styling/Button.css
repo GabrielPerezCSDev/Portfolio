@@ -1,0 +1,17 @@
+.arrow-button {
+    background-color: transparent;
+    border: none;
+    color: #007bff;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.2s ease;
+  }
+  
+  .arrow-button:hover {
+    transform: scale(1.2);
+  }
+  
+  .arrow-button:focus {
+    outline: none;
+  }
