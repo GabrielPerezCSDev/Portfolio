@@ -8,17 +8,17 @@ const images = [
     {
         title: 'Starfield Skirmish',
         imageURL: starfield,
-        descriptionURL: 'This update introduces significant enhancements and bug fixes to the battle system. Key changes include the implementation of a new battle interface (io_battle), a dedicated screen for Pokémon battles (io_pokemon_battle_screen), and an interface for selecting battle moves (io_battle_moves). Additionally, the system now supports wild Pokémon encounters through the io_wild_battle function.'
+        descriptionURL: 'A space-themed shooter where players battle alien ships and progressively increase difficulty levels. The game features dynamic alien ship management, level scaling, and user-friendly controls for an immersive space combat experience.'
     },
     {
         title: 'Pokemon Game',
         imageURL: pokemon,
-        descriptionURL: 'This update introduces significant enhancements and bug fixes to the battle system. Key changes include the implementation of a new battle interface (io_battle), a dedicated screen for Pokémon battles (io_pokemon_battle_screen), and an interface for selecting battle moves (io_battle_moves). Additionally, the system now supports wild Pokémon encounters through the io_wild_battle function.'
+        descriptionURL: 'A Pokémon-inspired game with a revamped battle system, new battle interface, dedicated screens for Pokémon battles, and support for wild Pokémon encounters. This update also includes enhanced move selection and interactive battle features.'
     },
     {
-        title: 'Empires (Backend)',
+        title: 'Ascension of Empires (Backend)',
         imageURL: empires,
-        descriptionURL: 'This update introduces significant enhancements and bug fixes to the battle system. Key changes include the implementation of a new battle interface (io_battle), a dedicated screen for Pokémon battles (io_pokemon_battle_screen), and an interface for selecting battle moves (io_battle_moves). Additionally, the system now supports wild Pokémon encounters through the io_wild_battle function.'
+        descriptionURL: 'A strategy-based backend for a multiplayer game where players manage nations, expand territories, and battle for dominance. Features include resource management, player-vs-player interactions, and server-based game mechanics.'
     }
 ]
 const Home: React.FC = () => {
