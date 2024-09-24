@@ -1,0 +1,60 @@
+
+.contact-section {
+    width: 50%;
+    margin: 40px auto;
+    background-color: #f4f4f4;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    display: block;
+}
+
+/* Smaller width for name and email input fields */
+input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    width: 75%; /* Reduced width for name and email inputs */
+}
+
+/* Larger width for the message box */
+textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    width: 100%; /* Full width for message box */
+    height: 200px; /* Increased height for message box */
+    resize: none;
+}
+
+.submit-button {
+    padding: 12px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    max-width: 300px;
+    align-self: center;
+    margin-top: 20px;
+}
+
+.submit-button:hover {
+    background-color: #218838;
+}
