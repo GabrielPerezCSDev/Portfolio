@@ -1,17 +1,18 @@
 .arrow-button {
-    background-color: transparent;
-    border: none;
-    color: #007bff;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 10px;
-    transition: transform 0.2s ease;
-  }
-  
-  .arrow-button:hover {
-    transform: scale(1.2);
-  }
-  
-  .arrow-button:focus {
-    outline: none;
-  }
+  background-color: transparent;
+  border: none;
+  color: #000000;
+  font-size: 50px; /* Increased for better visibility */
+  cursor: pointer;
+  padding: 10px;
+  transition: transform 0.2s ease;
+  margin: 0 10px; /* Add spacing between button and image */
+}
+
+.arrow-button:hover {
+  transform: scale(1.2);
+}
+
+.arrow-button:focus {
+  outline: none;
+}

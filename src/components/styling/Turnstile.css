@@ -1,4 +1,55 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 .turnstile {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%; /* Use a percentage width to allow it to resize with the page */
+    max-width: 1000px; /* Set a max width to prevent it from getting too large */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #00FF00;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out; /* Smooth transition for resizing */
+    
+}
+
+.turnstile img {
+    width: 80%; /* Adjust to fit the parent container width, responsive */
+    max-width: 600px; /* Set a maximum width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.turnstile img:hover {
+    transform: scale(1.05);
+}
+
+.turnstile h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;  /* Font family */
+}
+
+.turnstile p {
+    text-align: justify;
+    padding: 0 20px;
+}
+
+.button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
 }

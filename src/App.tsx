@@ -4,6 +4,7 @@ import Header from './components/tsx/Header';
 import Background from './components/tsx/Background';
 import Home from './Pages/Home';
 import './App.css';
+import Footer from './components/tsx/Footer';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <Background />
       <Header />
       <Home />
-
+      <Footer />
     </div>
   );
 }
