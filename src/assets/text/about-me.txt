@@ -1,0 +1,12 @@
+Leveraging my interdisciplinary expertise in Chemical Engineering, Biomedical Engineering, and Computer Science, I am actively seeking full-time opportunities in software development and related fields. My academic journey at Iowa State University, culminating in a Bachelor of Arts in Computer Science (expected Fall 2024), has not only refined my problem-solving skills but has also fueled my passion for creating impactful software solutions.
+
+Throughout my experiences, I have embraced diverse roles, from tutoring advanced subjects at Iowa State University to leading data-driven investigations at Mars-Wrigley Confectionary using tools like MATLAB. These roles have equipped me with a unique blend of analytical thinking and practical execution that I bring into every software project I undertake.
+
+Key Projects:
+- **Ascension Of Empires**: Spearheaded backend development using Java, Spring Boot, MySQL, and Docker, where I gained hands-on experience with scalable systems, REST APIs, and collaboration in a dynamic development team.
+- **StarField Skirmish**: Developed a space-themed shooter game with an emphasis on dynamic alien ship generation and multi-level progression. This project strengthened my skills in game development and interactive user experiences.
+- **Pokémon Game Simulation**: Created a complex simulation in C and C++, featuring random map generation, a CSV-based Pokémon database, and an expansive 400x400 grid world. This project tested my ability to manage large datasets and integrate advanced algorithms to improve game functionality.
+
+In addition to my degree, my minor in Biomedical Engineering gives me a unique perspective on technology’s role in solving real-world challenges, especially in healthcare and biotechnology. I am excited to apply my diverse skill set to projects that require innovative thinking and software engineering.
+
+I am eager to contribute to groundbreaking projects and collaborate with forward-thinking teams that value continuous learning and professional growth. Let’s connect and discuss how my background and skills can align with your organization’s needs.

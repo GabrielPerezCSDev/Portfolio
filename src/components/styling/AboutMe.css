@@ -1,0 +1,31 @@
+.about-me-text-container {
+    padding: 20px;
+    line-height: 1.6;
+    font-size: 1.1em;
+    color: #333;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  .about-me-text-container h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .about-me-text-container h3 {
+    margin-top: 20px;
+  }
+  
+  .about-me-text-container ul {
+    margin: 10px 0;
+    padding-left: 20px;
+  }
+  
+  .about-me-text-container ul li {
+    margin-bottom: 10px;
+  }
+  
+  .about-me-text-container strong {
+    color: #007bff;
+  }
+  
