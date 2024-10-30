@@ -1,29 +1,27 @@
 .about-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px;
-    background-color: #817f7f;
-    max-width: 800px; /* Constrain the width of the whole section */
-    margin: 0 auto;   /* Center the section on the page */
-  }
-  
-  .about-me-image {
-    width: 250px;          /* Set the width to a fixed size */
-    height: 250px;         /* Set the height to the same fixed size */
-    object-fit: cover;     /* Ensure the image covers the area without distortion */
-    border-radius: 50%;    /* Make the image perfectly circular */
-    margin-bottom: 20px;
-  }
-  
-  .about-me-text-container {
-    padding: 20px;
-    line-height: 1.6;
-    font-size: 1.1em;
-    color: #333;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    max-width: 100%; /* Ensure the text doesn't overflow */
-    text-align: justify; /* Justify the text for better readability */
-  }
-  
+  padding: 40px 20px;
+  background-color: #817f7f;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.about-me-image {
+  width: 100%;          /* Full width in its column */
+  max-width: 250px;      /* Limit max size */
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
+}
+
+.about-me-text-container {
+  background-color: #f9f9f9;
+  color: #333;
+  border-radius: 8px;
+  line-height: 1.6;
+  font-size: 1.1em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: justify;
+}

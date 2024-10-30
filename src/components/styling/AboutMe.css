@@ -1,31 +1,34 @@
 .about-me-text-container {
-    padding: 20px;
-    line-height: 1.6;
-    font-size: 1.1em;
-    color: #333;
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* Light gray background */
+    color: #333; /* Darker text color for readability */
     border-radius: 8px;
-  }
-  
-  .about-me-text-container h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-  }
-  
-  .about-me-text-container h3 {
-    margin-top: 20px;
-  }
-  
-  .about-me-text-container ul {
-    margin: 10px 0;
-    padding-left: 20px;
-  }
-  
-  .about-me-text-container ul li {
-    margin-bottom: 10px;
-  }
-  
-  .about-me-text-container strong {
-    color: #007bff;
-  }
+    line-height: 1.4;
+    font-size: 1.1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: left;
+}
+.about-me-text-container .card-text,
+.about-me-text-container p {
+    color: #333; /* Apply a dark text color */
+}
+.about-me-text-container h2 {
+  color: #007bff;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.about-me-text-container h3 {
+  color: #555;
+  font-size: 1.4rem;
+  margin-top: 20px;
+}
+
+.about-me-text-container ul li {
+  margin-bottom: 10px;
+}
+
+.about-me-text-container strong {
+  color: #007bff;
+}
   
