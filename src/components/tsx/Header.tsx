@@ -1,3 +1,4 @@
+//components/tsx/Header.tsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styling/Header.css'; // Styling
