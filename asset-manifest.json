@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.ad2638b1.css",
-    "main.js": "/Portfolio/static/js/main.1a309e5a.js",
+    "main.css": "/Portfolio/static/css/main.099d1938.css",
+    "main.js": "/Portfolio/static/js/main.06b67b87.js",
     "static/js/453.1407b060.chunk.js": "/Portfolio/static/js/453.1407b060.chunk.js",
     "static/media/work_media_picture.jpg": "/Portfolio/static/media/work_media_picture.383a6e556b07aebaf9d9.jpg",
+    "static/media/File-Wizard.png": "/Portfolio/static/media/File-Wizard.aea4c30b31cfc4a53748.png",
     "static/media/Pokemon.jpg": "/Portfolio/static/media/Pokemon.83aad44a84b991da3f51.jpg",
     "static/media/starfield-skirmish.png": "/Portfolio/static/media/starfield-skirmish.71b34180c0ba5d2244bd.png",
     "static/media/Empires.jpg": "/Portfolio/static/media/Empires.18d9ae2c7726e8567f3f.jpg",
-    "static/media/File-Wizard.png": "/Portfolio/static/media/File-Wizard.fce3558f7aa61b558fda.png",
     "index.html": "/Portfolio/index.html",
-    "main.ad2638b1.css.map": "/Portfolio/static/css/main.ad2638b1.css.map",
-    "main.1a309e5a.js.map": "/Portfolio/static/js/main.1a309e5a.js.map",
+    "main.099d1938.css.map": "/Portfolio/static/css/main.099d1938.css.map",
+    "main.06b67b87.js.map": "/Portfolio/static/js/main.06b67b87.js.map",
     "453.1407b060.chunk.js.map": "/Portfolio/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ad2638b1.css",
-    "static/js/main.1a309e5a.js"
+    "static/css/main.099d1938.css",
+    "static/js/main.06b67b87.js"
   ]
 }
