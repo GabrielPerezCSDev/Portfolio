@@ -1,21 +1,34 @@
 import React from 'react';
 import './About.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import aboutMeImage from '../assets/images/about-me/work_media_picture.jpg';
 import AboutMeText from '../components/tsx/AboutMe';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 const About: React.FC = () => {
     return (
-        <div className="about-section container">
-            <div className="row align-items-start">
-                {/* Image Column */}
-                <div className="col-md-4 d-flex justify-content-center mb-4">
-                    <img src={aboutMeImage} alt="About Me" className="about-me-image" />
+        <div className="about-container">
+            <div className="about-header">
+                <div className="profile-section">
+                    <div className="image-container">
+                        <img src={aboutMeImage} alt="Gabriel Perez" className="profile-image" />
+                    </div>
+                    <h1>Gabriel Perez</h1>
+                    <p className="title">Software Developer</p>
+                    <div className="social-links">
+                        <a href="https://github.com/GabrielPerezCSDev" className="social-link">
+                            <Github />
+                        </a>
+                        <a href="https://www.linkedin.com/in/gabriel-perez-998602172/" className="social-link">
+                            <Linkedin />
+                        </a>
+                        <a href="mailto:gabrielperez.csdev@gmail.com" className="social-link">
+                            <Mail />
+                        </a>
+                    </div>
                 </div>
-                {/* Text Column */}
-                <div className="col-md-8">
-                    <AboutMeText />
-                </div>
+            </div>
+            <div className="content-section">
+                <AboutMeText />
             </div>
         </div>
     );
