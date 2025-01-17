@@ -1,65 +1,65 @@
-// src/Pages/Project/projects/FileWizardHub.tsx
 import React from 'react';
 import { Github } from 'lucide-react';
 import { ProjectData } from '../types';
-import filewizard from '../../../assets/images/Featured-Projects/File-Wizard.png';
+import empires from '../../../assets/images/Featured-Projects/Empires.jpg';
+
 const projectData: ProjectData = {
-    title: "File Wizard",
-    description: "A modern desktop utility that implements data visualization to give the user the ability to see what is happening with their file system and take control.",
-    technologies: ["Rust", "React", "Electron", "D3.js"],
-    githubUrl: "https://github.com/GabrielPerezCSDev/FileWizard",
-    slug: "file-wizard",
-    image: filewizard,
+    title: "Ascension of Empires",
+    description: "A multiplayer strategy game backend built with Spring Boot, featuring real-time WebSocket communication, dynamic game boards, and comprehensive resource management.",
+    technologies: ["Spring Boot", "WebSocket", "MySQL", "Docker"],
+    githubUrl: "https://github.com/GabrielPerezCSDev/Ascension-of-Empires",
+    slug: "ascension-empires",
+    image: empires,
     overview: [
-        "File Wizard is a modern desktop utility that implements data visualization to give the user the ability to see what is happening with their file system and take control. Built using Rust for the backend and React with Electron for the frontend, it combines high performance with a seamless user experience.",
-        "The application leverages multi-threading capabilities to perform rapid file system operations, while providing real-time visualizations of directory structures and file metadata. Its architecture emphasizes modularity and scalability, allowing for efficient handling of large file systems.",
-        "With features like dynamic visualization, advanced search capabilities, and comprehensive metadata management, File Wizard demonstrates sophisticated integration between high-performance backend operations and responsive frontend interactions."
+        "Ascension of Empires is a sophisticated backend system powering a multiplayer strategy game, built using Spring Boot. The system manages complex game mechanics including dynamic board generation, real-time player interactions, and comprehensive resource management.",
+        "The application implements a robust WebSocket architecture for real-time communication, enabling features like server-specific chat and instant game state updates. The system handles player management, game sessions, and in-game transactions through a well-structured API.",
+        "With a focus on scalability and maintainability, the backend demonstrates advanced Spring Boot concepts including session management, WebSocket integration, and RESTful API design, while supporting features like dynamic game board scaling and real-time multiplayer interactions."
     ],
     techStack: {
-        frontend: [
-            "React with Electron",
-            "D3.js for Visualizations",
-            "React Router Dom",
-            "Modern JavaScript (ES6+)"
-        ],
         backend: [
-            "Rust",
-            "Actix Web Framework",
-            "Multi-threading (std::thread)",
-            "Serde for Serialization"
+            "Spring Boot Framework",
+            "WebSocket for Real-time Communication",
+            "REST API Architecture",
+            "MySQL Database"
+        ],
+        infrastructure: [
+            "Docker Containerization",
+            "Maven Build System",
+            "Swagger API Documentation",
+            "Session Management"
         ]
     },
     features: [
         {
-            title: "File Organization",
-            description: "Intuitive graphical visualization of file system using rectangles to display file/folder size."
+            title: "Player Management",
+            description: "Comprehensive user system with authentication, profiles, and session handling for multiplayer coordination."
         },
         {
-            title: "Advanced Search",
-            description: "Multi-threaded search operations providing rapid results with dynamic filtering capabilities."
+            title: "Dynamic Game Boards",
+            description: "Scalable board generation that adjusts based on player count, with strategic resource placement and territory management."
         },
         {
-            title: "Dynamic Visualization",
-            description: "Real-time visual representation of file system structures using D3.js for interactive exploration."
+            title: "Real-time Communication",
+            description: "WebSocket integration enabling instant updates, server-specific chat, and live game state synchronization."
         },
         {
-            title: "Metadata Management",
-            description: "Comprehensive metadata handling with detailed file information and timestamp tracking."
+            title: "Resource System",
+            description: "Complex resource management including dynamic allocation, in-game economy, and item shop functionality."
         }
     ],
     implementationDetails: [
-        "The application implements a layered architecture with clear separation between the frontend and backend services. The Rust backend utilizes concurrent programming patterns for efficient file system operations, while the Electron-based frontend provides a responsive and native-like user experience.",
-        "Communication between layers is handled through a RESTful API, with JSON-formatted data exchange. The system employs advanced heuristics for file system discovery and implements robust error handling throughout the application stack."
+        "The system is architected around multiple interconnected modules including board management, player interactions, and resource handling. Each module is designed with clear responsibilities and interfaces, ensuring maintainability and scalability.",
+        "Real-time functionality is implemented through WebSocket connections, handling both chat communications and game state updates. The application employs sophisticated session management and user authentication to maintain game integrity."
     ],
     plannedFeatures: [
-        "Advanced heuristics for optimized file system exploration",
-        "Integrated file deletion capabilities",
-        "Customizable user settings interface",
-        "Enhanced file details view with content previews"
+        "Enhanced multiplayer matchmaking system",
+        "Advanced AI opponents for single-player mode",
+        "Extended game board customization options",
+        "Improved resource generation algorithms"
     ]
 };
 
-const FileWizard: React.FC = () => {
+const AscensionOfEmpires: React.FC = () => {
     return (
         <div className="project-detail-container">
             <header className="project-detail-header">
@@ -91,21 +91,21 @@ const FileWizard: React.FC = () => {
                     <section className="tech-stack">
                         <h2>Technical Stack</h2>
                         <div className="stack-sections">
-                            {projectData.techStack.frontend && (
+                            {projectData.techStack.backend && (
                                 <div className="stack-group">
-                                    <h3>Frontend</h3>
+                                    <h3>Backend Technologies</h3>
                                     <ul>
-                                        {projectData.techStack.frontend.map((tech, index) => (
+                                        {projectData.techStack.backend.map((tech, index) => (
                                             <li key={index}>{tech}</li>
                                         ))}
                                     </ul>
                                 </div>
                             )}
-                            {projectData.techStack.backend && (
+                            {projectData.techStack.infrastructure && (
                                 <div className="stack-group">
-                                    <h3>Backend</h3>
+                                    <h3>Infrastructure</h3>
                                     <ul>
-                                        {projectData.techStack.backend.map((tech, index) => (
+                                        {projectData.techStack.infrastructure.map((tech, index) => (
                                             <li key={index}>{tech}</li>
                                         ))}
                                     </ul>
@@ -139,7 +139,7 @@ const FileWizard: React.FC = () => {
                         </div>
                     </section>
                 )}
-                
+
                 {projectData.plannedFeatures && (
                     <section className="future-enhancements">
                         <h2>Planned Enhancements</h2>
@@ -155,4 +155,4 @@ const FileWizard: React.FC = () => {
     );
 };
 
-export default FileWizard;
+export default AscensionOfEmpires;

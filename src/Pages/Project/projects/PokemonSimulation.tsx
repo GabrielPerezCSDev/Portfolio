@@ -1,65 +1,66 @@
-// src/Pages/Project/projects/FileWizardHub.tsx
 import React from 'react';
 import { Github } from 'lucide-react';
 import { ProjectData } from '../types';
-import filewizard from '../../../assets/images/Featured-Projects/File-Wizard.png';
+import pokemon from '../../../assets/images/Featured-Projects/Pokemon.jpg';
+
 const projectData: ProjectData = {
-    title: "File Wizard",
-    description: "A modern desktop utility that implements data visualization to give the user the ability to see what is happening with their file system and take control.",
-    technologies: ["Rust", "React", "Electron", "D3.js"],
-    githubUrl: "https://github.com/GabrielPerezCSDev/FileWizard",
-    slug: "file-wizard",
-    image: filewizard,
+    title: "Pokémon Simulation",
+    description: "A complex simulation system with procedurally generated maps, custom pathfinding algorithms, and dynamic difficulty scaling.",
+    technologies: ["C/C++", "Data Structures", "Algorithms"],
+    githubUrl: "https://github.com/GabrielPerezCSDev/pokemon-game",
+    slug: "pokemon-game",
+    image: pokemon,
     overview: [
-        "File Wizard is a modern desktop utility that implements data visualization to give the user the ability to see what is happening with their file system and take control. Built using Rust for the backend and React with Electron for the frontend, it combines high performance with a seamless user experience.",
-        "The application leverages multi-threading capabilities to perform rapid file system operations, while providing real-time visualizations of directory structures and file metadata. Its architecture emphasizes modularity and scalability, allowing for efficient handling of large file systems.",
-        "With features like dynamic visualization, advanced search capabilities, and comprehensive metadata management, File Wizard demonstrates sophisticated integration between high-performance backend operations and responsive frontend interactions."
+        "The Pokémon Simulation Project is a sophisticated game environment that procedurally generates over 400 unique maps, implementing complex algorithms for world creation and character interaction. Built using C/C++, it demonstrates advanced programming concepts through custom data structures and efficient algorithms.",
+        "The simulation features dynamic difficulty scaling based on Manhattan distance from the origin, with maps becoming progressively more challenging as players explore further from their starting point. Character movement is managed through custom heap structures and pathfinding algorithms.",
+        "This project showcases the integration of various systems including procedural generation, pathfinding algorithms, and battle mechanics, all optimized through careful implementation of data structures and memory management in C/C++."
     ],
     techStack: {
         frontend: [
-            "React with Electron",
-            "D3.js for Visualizations",
-            "React Router Dom",
-            "Modern JavaScript (ES6+)"
+            "Custom C/C++ Game Engine",
+            "Character Movement System",
+            "Battle Interface",
+            "Map Visualization"
         ],
         backend: [
-            "Rust",
-            "Actix Web Framework",
-            "Multi-threading (std::thread)",
-            "Serde for Serialization"
+            "Custom Heap Implementation",
+            "Dijkstra's Pathfinding",
+            "CSV Data Parser",
+            "Procedural Generation"
         ]
     },
     features: [
         {
-            title: "File Organization",
-            description: "Intuitive graphical visualization of file system using rectangles to display file/folder size."
+            title: "World Generation",
+            description: "Sophisticated procedural generation system creating over 400 unique maps, with difficulty scaling based on Manhattan distance from origin."
         },
         {
-            title: "Advanced Search",
-            description: "Multi-threaded search operations providing rapid results with dynamic filtering capabilities."
+            title: "Advanced Pathfinding",
+            description: "Implementation of Dijkstra's algorithm for intelligent NPC movement, with custom heap structures for efficient path calculation."
         },
         {
-            title: "Dynamic Visualization",
-            description: "Real-time visual representation of file system structures using D3.js for interactive exploration."
+            title: "Character System",
+            description: "Multiple NPC types (Hikers, Rivals, Swimmers) each with unique movement patterns and behaviors, managed through custom data structures."
         },
         {
-            title: "Metadata Management",
-            description: "Comprehensive metadata handling with detailed file information and timestamp tracking."
+            title: "Battle Mechanics",
+            description: "Comprehensive battle system integrating character positions, type advantages, and move sets, all managed through efficient data processing."
         }
     ],
     implementationDetails: [
-        "The application implements a layered architecture with clear separation between the frontend and backend services. The Rust backend utilizes concurrent programming patterns for efficient file system operations, while the Electron-based frontend provides a responsive and native-like user experience.",
-        "Communication between layers is handled through a RESTful API, with JSON-formatted data exchange. The system employs advanced heuristics for file system discovery and implements robust error handling throughout the application stack."
+        "The core of the simulation is built upon custom data structures, including a specialized heap implementation in C for managing character movements and battle priority. This foundation ensures efficient operation of complex game mechanics while maintaining performance.",
+        "Map generation utilizes sophisticated algorithms to create unique, interconnected environments. The system implements persistent storage of generated maps while maintaining the ability to create new ones as players explore, all while scaling difficulty based on distance metrics."
     ],
     plannedFeatures: [
-        "Advanced heuristics for optimized file system exploration",
-        "Integrated file deletion capabilities",
-        "Customizable user settings interface",
-        "Enhanced file details view with content previews"
+        "Enhanced battle animations and visual feedback",
+        "Additional NPC types with unique behaviors",
+        "Extended move sets and battle mechanics",
+        "Improved map generation algorithms",
+        "Save/Load functionality for game states"
     ]
 };
 
-const FileWizard: React.FC = () => {
+const PokemonGame: React.FC = () => {
     return (
         <div className="project-detail-container">
             <header className="project-detail-header">
@@ -93,7 +94,7 @@ const FileWizard: React.FC = () => {
                         <div className="stack-sections">
                             {projectData.techStack.frontend && (
                                 <div className="stack-group">
-                                    <h3>Frontend</h3>
+                                    <h3>Game Systems</h3>
                                     <ul>
                                         {projectData.techStack.frontend.map((tech, index) => (
                                             <li key={index}>{tech}</li>
@@ -103,7 +104,7 @@ const FileWizard: React.FC = () => {
                             )}
                             {projectData.techStack.backend && (
                                 <div className="stack-group">
-                                    <h3>Backend</h3>
+                                    <h3>Core Technologies</h3>
                                     <ul>
                                         {projectData.techStack.backend.map((tech, index) => (
                                             <li key={index}>{tech}</li>
@@ -155,4 +156,4 @@ const FileWizard: React.FC = () => {
     );
 };
 
-export default FileWizard;
+export default PokemonGame;

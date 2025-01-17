@@ -95,8 +95,8 @@ const Projects: React.FC = () => {
       description: "A multiplayer strategy game backend with real-time WebSocket communication, dynamic game board generation, and comprehensive resource management.",
       technologies: ["Spring Boot", "WebSocket", "MySQL", "Docker"],
       image: empires,
-      githubUrl: "https://github.com/GabrielPerezCSDev/ascension-empires",
-      slug: "ascension-empires"
+      githubUrl: "https://github.com/GabrielPerezCSDev/Ascension-of-Empires",
+      slug: "ascension-of-empires"
     },
     {
       title: "Developer Portfolio",

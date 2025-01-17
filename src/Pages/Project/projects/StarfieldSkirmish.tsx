@@ -1,65 +1,65 @@
-// src/Pages/Project/projects/FileWizardHub.tsx
 import React from 'react';
 import { Github } from 'lucide-react';
 import { ProjectData } from '../types';
-import filewizard from '../../../assets/images/Featured-Projects/File-Wizard.png';
+import starfield from '../../../assets/images/Featured-Projects/Starfield.jpg';
+
 const projectData: ProjectData = {
-    title: "File Wizard",
-    description: "A modern desktop utility that implements data visualization to give the user the ability to see what is happening with their file system and take control.",
-    technologies: ["Rust", "React", "Electron", "D3.js"],
-    githubUrl: "https://github.com/GabrielPerezCSDev/FileWizard",
-    slug: "file-wizard",
-    image: filewizard,
+    title: "StarField Skirmish",
+    description: "A dynamic space combat simulator featuring progressive difficulty scaling, real-time combat mechanics, and dynamic enemy generation.",
+    technologies: ["C++", "Game Dev", "OOP"],
+    githubUrl: "https://github.com/GabrielPerezCSDev/starfield-skirmish",
+    slug: "starfield-skirmish",
+    image: starfield,
     overview: [
-        "File Wizard is a modern desktop utility that implements data visualization to give the user the ability to see what is happening with their file system and take control. Built using Rust for the backend and React with Electron for the frontend, it combines high performance with a seamless user experience.",
-        "The application leverages multi-threading capabilities to perform rapid file system operations, while providing real-time visualizations of directory structures and file metadata. Its architecture emphasizes modularity and scalability, allowing for efficient handling of large file systems.",
-        "With features like dynamic visualization, advanced search capabilities, and comprehensive metadata management, File Wizard demonstrates sophisticated integration between high-performance backend operations and responsive frontend interactions."
+        "StarField Skirmish is a dynamic space combat simulator that challenges players to navigate through an increasingly difficult cosmic battlefield. The game combines sophisticated combat mechanics with progressive difficulty scaling to create an engaging space warfare experience.",
+        "Players face evolving challenges through dynamic difficulty adjustments, where enemy patterns and behaviors become progressively more complex as they advance. The real-time combat system features responsive controls and comprehensive resource management.",
+        "Built using C++ and object-oriented design principles, the game showcases advanced game development concepts including custom physics, intelligent enemy AI, and optimized performance systems."
     ],
     techStack: {
         frontend: [
-            "React with Electron",
-            "D3.js for Visualizations",
-            "React Router Dom",
-            "Modern JavaScript (ES6+)"
+            "Custom C++ Game Engine",
+            "Object-Oriented Architecture",
+            "Event-Driven Input System",
+            "Entity Component System"
         ],
         backend: [
-            "Rust",
-            "Actix Web Framework",
-            "Multi-threading (std::thread)",
-            "Serde for Serialization"
+            "Physics Engine",
+            "AI System",
+            "Resource Management",
+            "Performance Optimization"
         ]
     },
     features: [
         {
-            title: "File Organization",
-            description: "Intuitive graphical visualization of file system using rectangles to display file/folder size."
+            title: "Advanced Combat System",
+            description: "Real-time projectile mechanics with precise collision detection, multiple enemy types, and a dynamic weapon system with upgrades and special abilities."
         },
         {
-            title: "Advanced Search",
-            description: "Multi-threaded search operations providing rapid results with dynamic filtering capabilities."
+            title: "Intelligent Enemy AI",
+            description: "Sophisticated enemy generation with level-based scaling, dynamic movement patterns, and adaptive difficulty adjustment based on player performance."
         },
         {
-            title: "Dynamic Visualization",
-            description: "Real-time visual representation of file system structures using D3.js for interactive exploration."
+            title: "Progressive Game System",
+            description: "Experience-based leveling system featuring unlockable abilities, ship upgrades, and a score multiplier system for skilled play."
         },
         {
-            title: "Metadata Management",
-            description: "Comprehensive metadata handling with detailed file information and timestamp tracking."
+            title: "Optimized Performance",
+            description: "Efficient collision detection using spatial partitioning, object pooling for projectiles, and optimized rendering pipeline for smooth gameplay."
         }
     ],
     implementationDetails: [
-        "The application implements a layered architecture with clear separation between the frontend and backend services. The Rust backend utilizes concurrent programming patterns for efficient file system operations, while the Electron-based frontend provides a responsive and native-like user experience.",
-        "Communication between layers is handled through a RESTful API, with JSON-formatted data exchange. The system employs advanced heuristics for file system discovery and implements robust error handling throughout the application stack."
+        "The game is built on a component-based architecture featuring a core game loop with fixed update timing and event-driven input handling. This foundation ensures responsive gameplay while managing complex game states and object interactions.",
+        "Performance optimization is achieved through sophisticated systems including spatial partitioning for collision detection, object pooling for projectiles and particles, and an optimized rendering pipeline, ensuring smooth gameplay even during intense combat sequences."
     ],
     plannedFeatures: [
-        "Advanced heuristics for optimized file system exploration",
-        "Integrated file deletion capabilities",
-        "Customizable user settings interface",
-        "Enhanced file details view with content previews"
+        "Additional enemy types with unique behaviors",
+        "Power-up system with temporary abilities",
+        "Local multiplayer support",
+        "Enhanced visual effects and particle systems"
     ]
 };
 
-const FileWizard: React.FC = () => {
+const StarfieldSkirmish: React.FC = () => {
     return (
         <div className="project-detail-container">
             <header className="project-detail-header">
@@ -93,7 +93,7 @@ const FileWizard: React.FC = () => {
                         <div className="stack-sections">
                             {projectData.techStack.frontend && (
                                 <div className="stack-group">
-                                    <h3>Frontend</h3>
+                                    <h3>Core Technologies</h3>
                                     <ul>
                                         {projectData.techStack.frontend.map((tech, index) => (
                                             <li key={index}>{tech}</li>
@@ -103,7 +103,7 @@ const FileWizard: React.FC = () => {
                             )}
                             {projectData.techStack.backend && (
                                 <div className="stack-group">
-                                    <h3>Backend</h3>
+                                    <h3>Game Systems</h3>
                                     <ul>
                                         {projectData.techStack.backend.map((tech, index) => (
                                             <li key={index}>{tech}</li>
@@ -155,4 +155,4 @@ const FileWizard: React.FC = () => {
     );
 };
 
-export default FileWizard;
+export default StarfieldSkirmish;
