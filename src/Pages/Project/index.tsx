@@ -6,6 +6,7 @@ import FileWizard from './projects/FileWizard'
 import AscensionOfEmpires from './projects/AscencionOfEmpires'
 import StarfieldSkirmish from './projects/StarfieldSkirmish';
 import PokemonGame from './projects/PokemonSimulation';
+import PortfolioProject from './projects/Portfolio';
 import './ProjectDetail.css';
 
 
@@ -16,6 +17,7 @@ const projectComponents: Record<string, React.FC> = {
     'ascension-of-empires': AscensionOfEmpires,
     'starfield-skirmish': StarfieldSkirmish,
     'pokemon-game': PokemonGame,
+    'portfolio': PortfolioProject,
     // Additional projects will be added here
 };
 
