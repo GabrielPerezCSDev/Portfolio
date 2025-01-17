@@ -6,10 +6,11 @@ import Header from './components/tsx/Header';
 import Background from './components/tsx/Background';
 import Home from './Pages/Home';
 import About from './Pages/About';
-import Projects from './Pages/Projects';
+import Projects from './Pages/Project/Projects';
 import Contact from './Pages/Contact';
 import './App.css';
 import Footer from './components/tsx/Footer';
+import ProjectDetail from './Pages/Project';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/Portfolio" element={<Home />} />
           <Route path="/Portfolio/about" element={<About />} />
           <Route path="/Portfolio/projects" element={<Projects />} />
+          <Route path="/Portfolio/projects/:slug" element={<ProjectDetail />} />
           <Route path="/Portfolio/contact" element={<Contact />} />
         </Routes>
       <Footer />
