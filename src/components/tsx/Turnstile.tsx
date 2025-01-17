@@ -16,10 +16,12 @@ interface TurnstileProps {
 // Helper function to get technology tags based on project title
 const getTechTags = (title: string): string[] => {
     switch (title) {
+        case 'ConnectHub':
+            return ['C', 'POSIX', 'TCP/IP', 'SQLite'];
         case 'File Wizard':
-            return ['Rust', 'CLI', 'File System'];
+            return ['Rust', 'Electron', 'File System', 'SQLite'];
         case 'Pokemon Game':
-            return ['C++', 'Data Structures', 'Algorithms'];
+            return ['C++', 'C', 'Data Structures', 'Algorithms'];
         case 'Ascension of Empires (Backend)':
             return ['Spring Boot', 'WebSocket', 'REST API'];
         case 'Starfield Skirmish':
