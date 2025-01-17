@@ -16,6 +16,17 @@ const projects = [
       ]
   },
   {
+    title: "ConnectHub",
+    technologies: ["C", "POSIX", "TCP/IP", "SQLite"],
+    description: "A high-performance TCP server architecture featuring:",
+    bulletPoints: [
+        "User authentication with bcrypt and session-based security",
+        "Scalable socket pool management with epoll event handling",
+        "Multi-threaded architecture with thread-safe operations",
+        "In-memory caching and SQLite database integration"
+    ]
+    },
+  {
       title: "Ascension of Empires",
       technologies: ["Spring Boot", "WebSocket", "MySQL", "Docker"],
       description: "A multiplayer strategy game backend featuring:",
@@ -24,17 +35,6 @@ const projects = [
           "Dynamic game board generation and scaling",
           "Server-specific chat systems and user authentication",
           "Resource management and in-game economy system"
-      ]
-  },
-  {
-      title: "StarField Skirmish",
-      technologies: ["C++", "OOP", "Game Development"],
-      description: "A space combat game implementing:",
-      bulletPoints: [
-          "Dynamic difficulty progression system",
-          "Level-scaled enemy ship generation",
-          "Real-time combat mechanics and controls",
-          "Progressive game state tracking"
       ]
   },
   {
@@ -64,7 +64,7 @@ const AboutMeText: React.FC = () => {
         {
             icon: Terminal,
             title: "Systems Programming",
-            text: "Experienced in Rust and C++ for building efficient, high-performance applications"
+            text: "Experienced in C, Rust, and C++ for building efficient, low-level system applications"
         },
         {
             icon: Code,
@@ -74,7 +74,7 @@ const AboutMeText: React.FC = () => {
         {
             icon: Database,
             title: "Database & Architecture",
-            text: "Skilled in MySQL, microservices, and scalable system design"
+            text: "Skilled in MySQL, SQLite, microservices, and scalable system design"
         }
     ];
 
@@ -87,7 +87,7 @@ const AboutMeText: React.FC = () => {
                     I am actively seeking full-time software development roles that allow me to tackle complex challenges and innovate.
                 </p>
                 <p>
-                    My journey at Iowa State University, where I am completing a Bachelor of Science in Computer Science (Fall 2024), 
+                    My journey at Iowa State University, where I am completed a Bachelor of Science in Computer Science (Fall 2024), 
                     has equipped me with both technical expertise and practical experience in software development.
                 </p>
             </div>
