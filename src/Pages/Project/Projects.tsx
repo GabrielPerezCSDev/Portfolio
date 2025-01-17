@@ -3,11 +3,12 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ExternalLink, Github, ArrowRight } from 'lucide-react';
 import './Projects.css';
-import starfield from '../assets/images/Featured-Projects/starfield-skirmish.png';
-import pokemon from '../assets/images/Featured-Projects/Pokemon.jpg';
-import empires from '../assets/images/Featured-Projects/Empires.jpg';
-import filewizard from '../assets/images/Featured-Projects/File-Wizard.png';
-import logo from '../assets/images/Featured-Projects/logo.png';
+import starfield from '../../assets/images/Featured-Projects/Starfield.jpg'
+import pokemon from '../../assets/images/Featured-Projects/Pokemon.jpg';
+import empires from '../../assets/images/Featured-Projects/Empires.jpg';
+import filewizard from '../../assets/images/Featured-Projects/File-Wizard.png';
+import logo from '../../assets/images/Featured-Projects/logo.png';
+import connecthub from '../../assets/images/Featured-Projects/ConnectHub.jpg';
 
 interface ProjectCardProps {
   title: string;
@@ -31,7 +32,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const navigate = useNavigate();
 
   return (
-    <div className="main-project-card" onClick={() => navigate(`/projects/${slug}`)}>
+    <div className="main-project-card" onClick={() => navigate(`/Portfolio/projects/${slug}`)}>
       <div className="main-project-image">
         <img src={image} alt={title} />
         <div className="main-project-links">
@@ -80,6 +81,14 @@ const Projects: React.FC = () => {
       image: filewizard,
       githubUrl: "https://github.com/GabrielPerezCSDev/filewizard",
       slug: "file-wizard"
+    },
+    {
+      title: "ConnectHub",
+      description: "A high-performance TCP server built in C that manages concurrent user connections through innovative socket pools, featuring secure authentication and real-time communication.",
+      technologies: ["C", "POSIX", "TCP/IP", "SQLite"],
+      image: connecthub,
+      githubUrl: "https://github.com/GabrielPerezCSDev/ConnectHub",
+      slug: "connect-hub"
     },
     {
       title: "Ascension of Empires",
