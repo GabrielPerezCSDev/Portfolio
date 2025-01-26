@@ -11,6 +11,7 @@ import Contact from './Pages/Contact';
 import './App.css';
 import Footer from './components/tsx/Footer';
 import ProjectDetail from './Pages/Project';
+import Checkers from './Pages/Checkers';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/Portfolio/projects" element={<Projects />} />
           <Route path="/Portfolio/projects/:slug" element={<ProjectDetail />} />
           <Route path="/Portfolio/contact" element={<Contact />} />
+          <Route path="/Portfolio/checkers" element={<Checkers />} />
         </Routes>
       <Footer />
     </div>
