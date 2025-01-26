@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import CheckersGame from '../components/tsx/Checkers/CheckersGame';
-import CheckersBoard from '../components/tsx/Checkers/CheckersBoard';
-import DifficultySelect from '../components/tsx/Checkers/DifficultySelect';
 const API_URL = 'http://localhost:9000';
 
 const Checkers: React.FC = () => {
@@ -12,36 +10,39 @@ const Checkers: React.FC = () => {
     );
     
     useEffect(() => {
+        let isActive = true;
+    
         const connectToGame = async () => {
+            if (!isActive) return;
             const storedId = localStorage.getItem('checkers_connection_id');
-            
             try {
                 const response = await fetch(`${API_URL}/`, {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ 'connection-id': storedId || null })
                 });
-     
-                if (!response.ok) {
-                    setIsConnected(false);
-                    throw new Error(`Server error: ${response.status}`);
+    
+                if (!response.ok || !isActive) return;
+    
+                const result = await response.json();
+                if (result.success && isActive) {
+                    localStorage.setItem('checkers_connection_id', result.message);
+                    setConnectionID(result.message);
+                    setIsConnected(true);
+                } else if (isActive) {
+                    setIsConnected(true);
                 }
-     
-                const newId = await response.text();
-                if (!storedId) {
-                    localStorage.setItem('checkers_connection_id', newId);
-                    setConnectionID(newId);
-                }
-                setIsConnected(true);
-                
             } catch (error) {
-                console.error('Connection error:', error);
-                setIsConnected(false);
+                if (isActive) {
+                    console.error('Connection error:', error);
+                    setIsConnected(false);
+                }
             }
         };
-     
+    
         connectToGame();
-     }, []);
+        return () => { isActive = false; };
+    }, []);
  
     // Add connection status logging
     useEffect(() => {

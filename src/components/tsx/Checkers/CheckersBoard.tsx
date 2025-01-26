@@ -7,80 +7,128 @@ const API_URL = 'http://localhost:9000';
 
 interface CheckersBoardProps {
     connectionID: string | null;
-}
+    board: number[][] | null;
+    fetchBoard: () => Promise<void>;
+ }
+ 
+ const CheckersBoard: React.FC<CheckersBoardProps> = ({ connectionID, board, fetchBoard }) => {
+    const [error, setError] = useState<string | null>(null);
+    const [fetchAttempts, setFetchAttempts] = useState(0);
+    const [selectedPiece, setSelectedPiece] = useState<{row: number, col: number} | null>(null);
+    const [legalMoves, setLegalMoves] = useState<number[][]>([]);
 
-const CheckersBoard: React.FC<CheckersBoardProps> = ({ connectionID }) => {
-   const [board, setBoard] = useState<number[][] | null>(null);
-   const [error, setError] = useState<string | null>(null);
+    useEffect(() => {
+        if (!board && fetchAttempts < 3) {
+            fetchBoard();
+            setFetchAttempts(prev => prev + 1);
+        }
+    }, [board, fetchBoard, fetchAttempts]);
 
-   useEffect(() => {
-    const fetchBoard = async () => {
-        if (!connectionID) return;
+    const onSelect = async (row: number, col: number) => {
+        const playerColor = localStorage.getItem('player_color');
+        if (!playerColor) {
+            console.log('Please select a color and start the game first');
+            return;
+        }
+
+        if (!board) {
+            console.log('Board not loaded yet');
+            return;
+        }
+
+        const pieceValue = board[row][col];
+
+        const isPlayerPiece = (pieceValue === 1 && playerColor === '1') || 
+                              (pieceValue === 3 && playerColor === '3');
+
+        if (!isPlayerPiece) {
+            console.log('You can only move your own pieces');
+            return;
+        }
+
+        console.log(`Clicked piece at: (${row}, ${col})`);
+
         try {
-            const response = await fetch(`${API_URL}/get-board`, {
-                method: 'POST',
+            const response = await fetch(`${API_URL}/legal-moves`, {
+                method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ 'connection-id': connectionID })
+                body: JSON.stringify({
+                    'connection-id': connectionID,
+                    row,
+                    col,
+                }),
             });
-            if (response.ok) {
-                const data = await response.json();
-                if (data.success && data.data) {
-                    setBoard(data.data);
-                }
+            const data = await response.json();
+            if (data.success && Array.isArray(data.data)) {
+                setLegalMoves(data.data);
+                setSelectedPiece({ row, col });
+                console.log("Legal moves:", data.data);
+            } else {
+                console.log("Error fetching legal moves:", data.message);
+                setLegalMoves([]);
+                setSelectedPiece(null);
             }
-        } catch (error) {
-            setError('Error fetching board');
+        } catch(error) {
+            setSelectedPiece(null);
+            setLegalMoves([]);
+            console.log("Fetch error:", error);
         }
     };
 
-        fetchBoard();
-    }, [connectionID]);
+ 
+    const renderSquare = (value: number, isBlackSquare: boolean, row: number, col: number) => {
+        const isLegalMove = legalMoves.some(move => move[0] === row && move[1] === col);
+        // Debug log to verify isLegalMove
+        console.log(`Square (${row}, ${col}) isLegalMove: ${isLegalMove}`);
 
-   const renderSquare = (value: number, isBlackSquare: boolean, row: number, col: number) => {
+        return (
+            <div 
+                key={`${row}-${col}`} 
+                className={`square ${isBlackSquare ? 'black-square' : 'white-square'} ${isLegalMove ? 'legal-move' : ''}`}
+            >
+                {value !== 0 && (
+                    <CheckersPiece 
+                        value={value} 
+                        row={row} 
+                        col={col} 
+                        onSelect={onSelect}
+                    />
+                )}
+            </div>
+        );
+    };
+ 
+    const renderBoard = () => {
+        if (!board) {
+            fetchBoard();
+            return null;
+        }
+        return (
+            <div className="board-grid">
+                {board.map((rowData, rowIndex) => (
+                    <div key={rowIndex} className="board-row">
+                        {rowData.map((square, colIndex) => 
+                            renderSquare(
+                                square,
+                                (rowIndex + colIndex) % 2 === 1,
+                                rowIndex,
+                                colIndex
+                            )
+                        )}
+                    </div>
+                ))}
+            </div>
+        );
+    };
+
+    if (error) return <div>Error: {error}</div>;
+    if (!board) return <div>Attempting to fetch board...</div>;
+
     return (
-        <div 
-            key={`${row}-${col}`} 
-            className={`square ${isBlackSquare ? 'black-square' : 'white-square'}`}
-        >
-            <CheckersPiece value={value} row={row} col={col} />
+        <div className="board-container">
+            {renderBoard()}
         </div>
     );
-};
-
-   const renderBoard = () => {
-       if (!board) return null;
-       
-       return (
-           <div className="board-grid">
-               {board.map((row, rowIndex) => (
-                   <div key={rowIndex} className="board-row">
-                       {row.map((square, colIndex) => 
-                           renderSquare(
-                               square,
-                               (rowIndex + colIndex) % 2 === 1,
-                               rowIndex,
-                               colIndex
-                           )
-                       )}
-                   </div>
-               ))}
-           </div>
-       );
-   };
-
-   if (error) {
-       return <div>Error: {error}</div>;
-   }
-
-   if (!board) {
-       return <div>Loading board...</div>;
-   }
-
-   return (
-       <div className="board-container">
-           {renderBoard()}
-       </div>
-   );
 };
 
 export default CheckersBoard;

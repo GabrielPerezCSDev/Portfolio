@@ -47,3 +47,13 @@
     background-color: #000000;
 }
 
+.piece.selected {
+    box-shadow: 0 0 10px #00FF00;
+    border: 3px solid #00FF00;
+}
+
+.legal-move {
+    box-shadow: 0 0 10px #00FF00 inset;
+    border: 2px dashed #00FF00;
+    background-color: rgba(0, 255, 0, 0.3);
+}
