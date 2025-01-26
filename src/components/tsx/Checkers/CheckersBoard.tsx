@@ -78,20 +78,21 @@ interface CheckersBoardProps {
  
     const renderSquare = (value: number, isBlackSquare: boolean, row: number, col: number) => {
         const isLegalMove = legalMoves.some(move => move[0] === row && move[1] === col);
-        // Debug log to verify isLegalMove
-        console.log(`Square (${row}, ${col}) isLegalMove: ${isLegalMove}`);
+        const isSelected = selectedPiece?.row === row && selectedPiece?.col === col;
+
 
         return (
             <div 
                 key={`${row}-${col}`} 
                 className={`square ${isBlackSquare ? 'black-square' : 'white-square'} ${isLegalMove ? 'legal-move' : ''}`}
-            >
+            >   
                 {value !== 0 && (
                     <CheckersPiece 
                         value={value} 
                         row={row} 
                         col={col} 
                         onSelect={onSelect}
+                        isSelected={isSelected}
                     />
                 )}
             </div>
