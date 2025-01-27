@@ -9,9 +9,10 @@ interface CheckersBoardProps {
     connectionID: string | null;
     board: number[][] | null;
     fetchBoard: () => Promise<void>;
+    onPlayerMove: (fromRow: number, fromCol: number, toRow: number, toCol: number) => Promise<void>;
  }
  
- const CheckersBoard: React.FC<CheckersBoardProps> = ({ connectionID, board, fetchBoard }) => {
+ const CheckersBoard: React.FC<CheckersBoardProps> = ({ connectionID, board, fetchBoard, onPlayerMove}) => {
     const [error, setError] = useState<string | null>(null);
     const [fetchAttempts, setFetchAttempts] = useState(0);
     const [selectedPiece, setSelectedPiece] = useState<{row: number, col: number} | null>(null);
@@ -38,8 +39,8 @@ interface CheckersBoardProps {
 
         const pieceValue = board[row][col];
 
-        const isPlayerPiece = (pieceValue === 1 && playerColor === '1') || 
-                              (pieceValue === 3 && playerColor === '3');
+        const isPlayerPiece = ((pieceValue === 1 || pieceValue === 2) && playerColor === '1') || 
+                              ((pieceValue === 3 || pieceValue === 4) && playerColor === '3');
 
         if (!isPlayerPiece) {
             console.log('You can only move your own pieces');
@@ -75,7 +76,27 @@ interface CheckersBoardProps {
         }
     };
 
- 
+    const onMove = async (row: number, col: number) => {
+        if (!selectedPiece) return;
+        
+        const isLegalMove = legalMoves.some(move => move[0] === row && move[1] === col);
+        if (!isLegalMove) {
+            console.log(`Move to (${row}, ${col}) is not a legal move.`);
+            return;
+        }
+    
+        await onPlayerMove(selectedPiece.row, selectedPiece.col, row, col);
+        setSelectedPiece(null);
+        setLegalMoves([]);
+    };
+
+    const handleSquareClick = (row: number, col: number) => {
+        if (selectedPiece) {
+            onMove(row, col);
+        }
+    };
+
+
     const renderSquare = (value: number, isBlackSquare: boolean, row: number, col: number) => {
         const isLegalMove = legalMoves.some(move => move[0] === row && move[1] === col);
         const isSelected = selectedPiece?.row === row && selectedPiece?.col === col;
@@ -85,6 +106,7 @@ interface CheckersBoardProps {
             <div 
                 key={`${row}-${col}`} 
                 className={`square ${isBlackSquare ? 'black-square' : 'white-square'} ${isLegalMove ? 'legal-move' : ''}`}
+                onClick={() => handleSquareClick(row, col)}
             >   
                 {value !== 0 && (
                     <CheckersPiece 

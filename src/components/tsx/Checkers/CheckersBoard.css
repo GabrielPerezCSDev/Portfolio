@@ -47,6 +47,28 @@
     background-color: #000000;
 }
 
+.red-king {
+    background-color: #630505;
+    position: relative;
+}
+
+.black-king {
+    background-color: #000000;
+    position: relative;
+}
+
+.king-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: gold;
+    pointer-events: none;
+}
+
+
+
 .piece.selected {
     box-shadow: 0 0 10px #00FF00;
     border: 3px solid #00FF00;
