@@ -1,0 +1,24 @@
+/* Disclaimer.css */
+.disclaimer {
+    background-color: rgba(0, 50, 0, 0.3);
+    border: 1px solid #00FF00;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.disclaimer p {
+    color: #FFFFFF;
+    font-size: 0.9rem;
+    text-align: center;
+    margin: 0;
+}
+
+.disclaimer-title {
+    color: #00FF00;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}

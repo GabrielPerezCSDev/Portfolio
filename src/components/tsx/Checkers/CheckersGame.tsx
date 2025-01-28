@@ -6,6 +6,7 @@ import CheckersBoard from './CheckersBoard';
 import SidePanel from './SidePanel';
 import './CheckersGame.css';
 import GameOver from './GameOver';
+import Disclaimer from './Disclaimer';
 
 const BACKEND_IP = process.env.REACT_APP_BACKEND_IP;
 const BACKEND_PORT = process.env.REACT_APP_BACKEND_PORT;
@@ -326,6 +327,7 @@ const CheckersGame: React.FC<CheckersGameProps> = ({ connectionID }) => {
 
   return (
     <div className="game-layout">
+      <div className="game-content">
       <div className="board-container">
         <CheckersBoard
           connectionID={connectionID}
@@ -338,7 +340,10 @@ const CheckersGame: React.FC<CheckersGameProps> = ({ connectionID }) => {
           onReset={handleReset}
         />
       </div>
-
+      <div className="disclaimer-container">
+                <Disclaimer />
+            </div>
+      </div>
       <SidePanel
         isActive={isActive}
         onGameStart={handleGameStart}
