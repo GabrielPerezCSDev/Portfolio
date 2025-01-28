@@ -1,3 +1,5 @@
+import './GameOver.css'
+
 interface GameOverProps {
     status: number;
     playerColor: number;

@@ -162,14 +162,6 @@ const CheckersBoard: React.FC<CheckersBoardProps> = ({
     return (
         <div className="board-container">
         {renderBoard()}
-        {status !== -1 && (
-            <GameOver 
-                status={status}
-                playerColor={playerColor || 0}
-                onNewGame={onNewGame}
-                onReset={onReset}
-            />
-        )}
     </div>
     );
 };
