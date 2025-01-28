@@ -3,9 +3,8 @@ import React, { useEffect, useState } from 'react';
 import './styling/CheckersBoard.css';
 import CheckersPiece from './CheckersPiece';
 import GameOver from './GameOver';
-const BACKEND_IP = process.env.REACT_APP_BACKEND_IP;
-const BACKEND_PORT = process.env.REACT_APP_BACKEND_PORT;
-const API_URL = `http://${BACKEND_IP}:${BACKEND_PORT}`;
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API_URL = `${BACKEND_URL}`;
 
 interface CheckersBoardProps {
     connectionID: string | null;

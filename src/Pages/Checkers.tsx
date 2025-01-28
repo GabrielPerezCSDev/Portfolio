@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import CheckersGame from '../components/tsx/Checkers/CheckersGame';
 import './Checkers.css'
-const BACKEND_IP = process.env.REACT_APP_BACKEND_IP;
-const BACKEND_PORT = process.env.REACT_APP_BACKEND_PORT;
-const API_URL = `http://${BACKEND_IP}:${BACKEND_PORT}`;
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API_URL = `${BACKEND_URL}`;
 
 const Checkers: React.FC = () => {
     const [gameState, setGameState] = useState<'initial' | 'playing'>('initial');
@@ -19,6 +18,7 @@ const Checkers: React.FC = () => {
             if (!isActive) return;
             const storedId = localStorage.getItem('checkers_connection_id');
             try {
+                console.log(`Connecting to ${API_URL}`);
                 const response = await fetch(`${API_URL}/`, {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
@@ -57,7 +57,16 @@ const Checkers: React.FC = () => {
         <div className="checkers-page">
             <h1 className='title'>Neural Checkers</h1>
             {!isConnected ? (
-                <div className="error-message">Not connected to game server</div>
+                <div className="error-message"><p>
+                Thank you for visiting <strong>Neural Checkers</strong>, my AI-powered checkers game project! 
+            </p>
+            <p>
+                Currently, the game-server is temporarily offline as I am in the process of upgrading and securing the backend infrastructure. This includes configuring HTTPS for secure connections and integrating a reliable domain setup.
+            </p>
+            <p>
+                Please check back soon, or feel free to explore the rest of my portfolio to see my other projects and accomplishments. I’d be happy to discuss this project in more detail during an interview or via email or feel free to visit
+                the source code on my github!
+            </p></div>
             ) : (
                 <CheckersGame  
                     connectionID={connectionID} 
