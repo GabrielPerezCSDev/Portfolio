@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import CheckersGame from '../components/tsx/Checkers/CheckersGame';
+import './Checkers.css'
 const BACKEND_IP = process.env.REACT_APP_BACKEND_IP;
 const BACKEND_PORT = process.env.REACT_APP_BACKEND_PORT;
 const API_URL = `http://${BACKEND_IP}:${BACKEND_PORT}`;
@@ -54,7 +55,7 @@ const Checkers: React.FC = () => {
  
     return (
         <div className="checkers-page">
-            <h1>Checkers AI</h1>
+            <h1 className='title'>Neural Checkers</h1>
             {!isConnected ? (
                 <div className="error-message">Not connected to game server</div>
             ) : (

@@ -2,24 +2,38 @@
     background-color: rgba(0, 255, 0, 0.1);
     border: 1px solid #00FF00;
     border-radius: 8px;
-    padding: 2rem;
-    min-height: 100vh;
+    padding: 2rem 4rem; /* Increased horizontal padding */
+    min-height: calc(100vh - 4rem); /* Subtract padding to prevent overflow */
+    margin: 2rem; /* Add margin around the border */
+    box-sizing: border-box; /* Include padding in height calculation */
 }
 
 .checkers-page h1 {
     font-family: 'Press Start 2P', cursive;
     color: #00FF00;
     text-align: center;
-    margin-bottom: 2rem;
+    margin: 1rem 0 3rem 0; /* Adjusted margins */
+    font-size: 2.5rem; /* Larger title */
 }
 
 .game-setup, .game-container {
-    max-width: 800px;
+    max-width: 1200px; /* Increased to accommodate game layout */
     margin: 0 auto;
+    padding: 0 1rem; /* Add some padding */
 }
 
 .error-message {
     color: #FF0000;
     text-align: center;
     margin-top: 2rem;
+    padding: 1rem;
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid #FF0000;
+    border-radius: 4px;
+}
+
+.title {
+    font-family: 'Press Start 2P', cursive;
+    color: #00FF00;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Add glow effect */
 }
