@@ -1,0 +1,23 @@
+.game-over-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.reset-button, .new-game-button {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.reset-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.new-game-button {
+    background-color: #2196F3;
+    color: white;
+}

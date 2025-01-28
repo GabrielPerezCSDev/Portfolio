@@ -2,20 +2,35 @@
 import React, { useEffect, useState } from 'react';
 import './CheckersBoard.css';
 import CheckersPiece from './CheckersPiece';
-
-const API_URL = 'http://localhost:9000';
+import GameOver from './GameOver';
+const BACKEND_IP = process.env.REACT_APP_BACKEND_IP;
+const BACKEND_PORT = process.env.REACT_APP_BACKEND_PORT;
+const API_URL = `http://${BACKEND_IP}:${BACKEND_PORT}`;
 
 interface CheckersBoardProps {
     connectionID: string | null;
     board: number[][] | null;
     fetchBoard: () => Promise<void>;
     onPlayerMove: (fromRow: number, fromCol: number, toRow: number, toCol: number) => Promise<void>;
- }
- 
- const CheckersBoard: React.FC<CheckersBoardProps> = ({ connectionID, board, fetchBoard, onPlayerMove}) => {
+    status: number;
+    playerColor: number | null;
+    onNewGame: () => Promise<void>;
+    onReset: () => Promise<void>;
+}
+
+const CheckersBoard: React.FC<CheckersBoardProps> = ({ 
+    connectionID,
+    board,
+    fetchBoard,
+    onPlayerMove,
+    status,
+    playerColor,
+    onNewGame,
+    onReset 
+}) => {
     const [error, setError] = useState<string | null>(null);
     const [fetchAttempts, setFetchAttempts] = useState(0);
-    const [selectedPiece, setSelectedPiece] = useState<{row: number, col: number} | null>(null);
+    const [selectedPiece, setSelectedPiece] = useState<{ row: number, col: number } | null>(null);
     const [legalMoves, setLegalMoves] = useState<number[][]>([]);
 
     useEffect(() => {
@@ -39,15 +54,13 @@ interface CheckersBoardProps {
 
         const pieceValue = board[row][col];
 
-        const isPlayerPiece = ((pieceValue === 1 || pieceValue === 2) && playerColor === '1') || 
-                              ((pieceValue === 3 || pieceValue === 4) && playerColor === '3');
+        const isPlayerPiece = ((pieceValue === 1 || pieceValue === 2) && playerColor === '1') ||
+            ((pieceValue === 3 || pieceValue === 4) && playerColor === '3');
 
         if (!isPlayerPiece) {
             console.log('You can only move your own pieces');
             return;
         }
-
-        console.log(`Clicked piece at: (${row}, ${col})`);
 
         try {
             const response = await fetch(`${API_URL}/legal-moves`, {
@@ -63,13 +76,12 @@ interface CheckersBoardProps {
             if (data.success && Array.isArray(data.data)) {
                 setLegalMoves(data.data);
                 setSelectedPiece({ row, col });
-                console.log("Legal moves:", data.data);
             } else {
                 console.log("Error fetching legal moves:", data.message);
                 setLegalMoves([]);
                 setSelectedPiece(null);
             }
-        } catch(error) {
+        } catch (error) {
             setSelectedPiece(null);
             setLegalMoves([]);
             console.log("Fetch error:", error);
@@ -78,13 +90,13 @@ interface CheckersBoardProps {
 
     const onMove = async (row: number, col: number) => {
         if (!selectedPiece) return;
-        
+
         const isLegalMove = legalMoves.some(move => move[0] === row && move[1] === col);
         if (!isLegalMove) {
             console.log(`Move to (${row}, ${col}) is not a legal move.`);
             return;
         }
-    
+
         await onPlayerMove(selectedPiece.row, selectedPiece.col, row, col);
         setSelectedPiece(null);
         setLegalMoves([]);
@@ -103,16 +115,16 @@ interface CheckersBoardProps {
 
 
         return (
-            <div 
-                key={`${row}-${col}`} 
+            <div
+                key={`${row}-${col}`}
                 className={`square ${isBlackSquare ? 'black-square' : 'white-square'} ${isLegalMove ? 'legal-move' : ''}`}
                 onClick={() => handleSquareClick(row, col)}
-            >   
+            >
                 {value !== 0 && (
-                    <CheckersPiece 
-                        value={value} 
-                        row={row} 
-                        col={col} 
+                    <CheckersPiece
+                        value={value}
+                        row={row}
+                        col={col}
                         onSelect={onSelect}
                         isSelected={isSelected}
                     />
@@ -120,7 +132,7 @@ interface CheckersBoardProps {
             </div>
         );
     };
- 
+
     const renderBoard = () => {
         if (!board) {
             fetchBoard();
@@ -131,7 +143,7 @@ interface CheckersBoardProps {
                 {board.map((rowData, rowIndex) => (
                     <div key={rowIndex} className="board-row">
                         {rowData.map((square, colIndex) => 
-                            renderSquare(
+                            renderSquare(  // RIGHT HERE - renderSquare is used!
                                 square,
                                 (rowIndex + colIndex) % 2 === 1,
                                 rowIndex,
@@ -149,8 +161,16 @@ interface CheckersBoardProps {
 
     return (
         <div className="board-container">
-            {renderBoard()}
-        </div>
+        {renderBoard()}
+        {status !== -1 && (
+            <GameOver 
+                status={status}
+                playerColor={playerColor || 0}
+                onNewGame={onNewGame}
+                onReset={onReset}
+            />
+        )}
+    </div>
     );
 };
 

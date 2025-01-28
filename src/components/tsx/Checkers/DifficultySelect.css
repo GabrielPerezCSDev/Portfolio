@@ -1,0 +1,71 @@
+/* DifficultySelect.css */
+.difficulty-select {
+    background-color: rgba(0, 255, 0, 0.1);
+    border: 1px solid #00FF00;
+    border-radius: 8px;
+    padding: 2rem;
+ }
+ 
+ .difficulty-select form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+ }
+ 
+ .select-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+ }
+ 
+ .select-group label {
+    color: #00FF00;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.9rem;
+ }
+ 
+ .select-group select {
+    background-color: rgba(0, 50, 0, 0.3);
+    border: 1px solid #00FF00;
+    border-radius: 4px;
+    padding: 0.5rem;
+    color: #FFFFFF;
+    cursor: pointer;
+ }
+ 
+ .select-group select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 255, 0, 0.2);
+ }
+ 
+ .select-group option {
+    background-color: rgba(0, 50, 0, 0.9);
+    color: #FFFFFF;
+ }
+ 
+ .start-button {
+    background-color: rgba(0, 50, 0, 0.3);
+    border: 1px solid #00FF00;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    color: #00FF00;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-top: 1rem;
+ }
+ 
+ .start-button:hover {
+    transform: translateY(-2px);
+    background-color: rgba(0, 255, 0, 0.2);
+ }
+ 
+ @media (max-width: 768px) {
+    .difficulty-select {
+        padding: 1rem;
+    }
+    
+    .select-group label {
+        font-size: 0.8rem;
+    }
+ }

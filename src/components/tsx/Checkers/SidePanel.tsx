@@ -1,28 +1,24 @@
-// SidePanel.tsx
 import React from 'react';
 import DifficultySelect from './DifficultySelect';
+import GameControls from './GameControls';
 
 interface SidePanelProps {
- isActive: boolean;
- onGameStart: (difficultyCode: number, colorCode: number) => void;
- onQuit?: () => void;
+    isActive: boolean;
+    onGameStart: (difficultyCode: number, colorCode: number) => void;
+    onStop: () => Promise<void>;
+    onReset: () => Promise<void>;
 }
 
-const SidePanel: React.FC<SidePanelProps> = ({ isActive, onGameStart, onQuit }) => {
- return (
-   <div className="side-panel">
-     {!isActive ? (
-       <DifficultySelect onSubmit={onGameStart} />
-     ) : (
-       <div className="game-controls">
-         <h3>Game Controls</h3>
-         <button className="quit-button" onClick={onQuit}>
-           Quit Game
-         </button>
-       </div>
-     )}
-   </div>
- );
+const SidePanel: React.FC<SidePanelProps> = ({ isActive, onGameStart, onStop, onReset }) => {
+    return (
+        <div className="side-panel">
+            {!isActive ? (
+                <DifficultySelect onSubmit={onGameStart} />
+            ) : (
+                <GameControls onStop={onStop} onReset={onReset} />
+            )}
+        </div>
+    );
 };
 
 export default SidePanel;

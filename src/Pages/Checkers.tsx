@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import CheckersGame from '../components/tsx/Checkers/CheckersGame';
-const API_URL = 'http://localhost:9000';
+const BACKEND_IP = process.env.REACT_APP_BACKEND_IP;
+const BACKEND_PORT = process.env.REACT_APP_BACKEND_PORT;
+const API_URL = `http://${BACKEND_IP}:${BACKEND_PORT}`;
 
 const Checkers: React.FC = () => {
     const [gameState, setGameState] = useState<'initial' | 'playing'>('initial');
@@ -56,8 +58,7 @@ const Checkers: React.FC = () => {
             {!isConnected ? (
                 <div className="error-message">Not connected to game server</div>
             ) : (
-                <CheckersGame 
-                    isActive={gameState !== 'initial'} 
+                <CheckersGame  
                     connectionID={connectionID} 
                 />
             )}

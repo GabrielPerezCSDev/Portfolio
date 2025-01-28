@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './DifficultySelect.css';
 
 interface DifficultySelectProps {
   onSubmit: (difficultyCode: number, colorCode: number) => void;
@@ -34,33 +35,37 @@ const DifficultySelect: React.FC<DifficultySelectProps> = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-      <div>
-        <label>Difficulty:</label>
-        <select
-          value={selectedDifficulty}
-          onChange={(e) => setSelectedDifficulty(e.target.value)}
-        >
-          <option value="easy">Easy</option>
-          <option value="medium">Medium</option>
-          <option value="hard">Hard</option>
-        </select>
-      </div>
+    <div className="difficulty-select">
+        <form onSubmit={handleSubmit}>
+            <div className="select-group">
+                <label>Difficulty:</label>
+                <select
+                    value={selectedDifficulty}
+                    onChange={(e) => setSelectedDifficulty(e.target.value)}
+                >
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
 
-      <div>
-        <label>Color:</label>
-        <select
-          value={selectedColor}
-          onChange={(e) => setSelectedColor(e.target.value)}
-        >
-          <option value="red">Red</option>
-          <option value="black">Black</option>
-        </select>
-      </div>
+            <div className="select-group">
+                <label>Color:</label>
+                <select
+                    value={selectedColor}
+                    onChange={(e) => setSelectedColor(e.target.value)}
+                >
+                    <option value="red">Red</option>
+                    <option value="black">Black</option>
+                </select>
+            </div>
 
-      <button type="submit">Start Game</button>
-    </form>
-  );
+            <button type="submit" className="start-button">
+                Start Game
+            </button>
+        </form>
+    </div>
+);
 };
 
 export default DifficultySelect;
