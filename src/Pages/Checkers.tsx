@@ -58,14 +58,7 @@ const Checkers: React.FC = () => {
             <h1 className='title'>Neural Checkers</h1>
             {!isConnected ? (
                 <div className="error-message"><p>
-                Thank you for visiting <strong>Neural Checkers</strong>, my AI-powered checkers game project! 
-            </p>
-            <p>
-                Currently, the game-server is temporarily offline as I am in the process of upgrading and securing the backend infrastructure. This includes configuring HTTPS for secure connections and integrating a reliable domain setup.
-            </p>
-            <p>
-                Please check back soon, or feel free to explore the rest of my portfolio to see my other projects and accomplishments. I’d be happy to discuss this project in more detail during an interview or via email or feel free to visit
-                the source code on my github!
+                Public servers are currently down sorry!! Please request a demo by email if interested!
             </p></div>
             ) : (
                 <CheckersGame  

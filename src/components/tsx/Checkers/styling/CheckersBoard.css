@@ -1,23 +1,31 @@
 .board-container {
     display: flex;
     justify-content: center;
-    padding: 2rem;
+    align-items: center;
+    width: 100%;
+    max-width: 600px; /* Adjust based on preference */
+    aspect-ratio: 1;
+    margin: 0 auto;
 }
 
 .board-grid {
+    width: 100%;
+    aspect-ratio: 1;
     border: 2px solid #00FF00;
     background-color: rgba(0, 255, 0, 0.1);
     display: flex;
     flex-direction: column;
 }
 
+
 .board-row {
     display: flex;
+    flex: 1;
 }
 
 .square {
-    width: 60px;
-    height: 60px;
+    flex: 1;
+    aspect-ratio: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,4 +86,19 @@
     box-shadow: 0 0 10px #00FF00 inset;
     border: 2px dashed #00FF00;
     background-color: rgba(0, 255, 0, 0.3);
+}
+
+
+@media (min-width: 1024px) {
+    .board-container {
+        min-width: 480px;
+        max-width: 560px;
+    }
+}
+
+@media (max-width: 768px) {
+    .board-container {
+        max-width: 100%;
+        padding: 1rem;
+    }
 }

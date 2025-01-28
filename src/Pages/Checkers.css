@@ -2,10 +2,10 @@
     background-color: rgba(0, 255, 0, 0.1);
     border: 1px solid #00FF00;
     border-radius: 8px;
-    padding: 2rem 4rem; /* Increased horizontal padding */
-    min-height: calc(100vh - 4rem); /* Subtract padding to prevent overflow */
-    margin: 2rem; /* Add margin around the border */
-    box-sizing: border-box; /* Include padding in height calculation */
+    padding: 2rem 4rem;
+    min-height: calc(100vh - 4rem);
+    margin: 2rem;
+    box-sizing: border-box;
 }
 
 .checkers-page h1 {
@@ -36,4 +36,30 @@
     font-family: 'Press Start 2P', cursive;
     color: #00FF00;
     text-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Add glow effect */
+}
+
+/* Increase game container size for desktop */
+@media (min-width: 1024px) {
+    .game-setup, .game-container {
+        max-width: 1400px; /* Increased from 1200px */
+        margin: 0 auto;
+    }
+
+    .board-container {
+        min-width: 600px;  /* Bigger minimum size on desktop */
+        max-width: 800px;  /* Bigger maximum size on desktop */
+    }
+
+    .game-layout {
+        gap: 3rem;
+        padding: 0 3rem;
+    }
+}
+
+/* Keep mobile responsive */
+@media (max-width: 768px) {
+    .checkers-page {
+        margin: 1rem;
+        padding: 1rem;
+    }
 }
