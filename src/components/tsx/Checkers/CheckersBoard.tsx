@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import './CheckersBoard.css';
+import './styling/CheckersBoard.css';
 import CheckersPiece from './CheckersPiece';
 import GameOver from './GameOver';
 const BACKEND_IP = process.env.REACT_APP_BACKEND_IP;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './DifficultySelect.css';
+import './styling/DifficultySelect.css';
 
 interface DifficultySelectProps {
   onSubmit: (difficultyCode: number, colorCode: number) => void;

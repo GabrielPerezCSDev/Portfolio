@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import CheckersBoard from './CheckersBoard';
 import SidePanel from './SidePanel';
-import './CheckersGame.css';
+import './styling/CheckersGame.css';
 import GameOver from './GameOver';
 import Disclaimer from './Disclaimer';
 

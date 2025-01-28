@@ -1,4 +1,4 @@
-import './GameOver.css'
+import './styling/GameOver.css'
 
 interface GameOverProps {
     status: number;

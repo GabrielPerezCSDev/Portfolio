@@ -1,6 +1,6 @@
 // GameControls.tsx
 import React from 'react';
-import './GameControls.css';
+import './styling/GameControls.css';
 
 interface GameControlsProps {
     onStop: () => Promise<void>;

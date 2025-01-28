@@ -1,6 +1,6 @@
 // Disclaimer.tsx
 import React from 'react';
-import './Disclaimer.css';
+import './styling/Disclaimer.css';
 
 const Disclaimer: React.FC = () => {
     return (
