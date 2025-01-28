@@ -27,7 +27,9 @@ const CheckersGame: React.FC<CheckersGameProps> = ({ connectionID }) => {
     );
     const [playerMove, setPlayerMove] = useState<number>(0);
     const [status, setStatus] = useState<number>(-1);
-    const [isActive, setIsActive] = useState(false);
+    const [isActive, setIsActive] = useState<boolean>(
+      localStorage.getItem('isActive') === 'true'
+    );
 
     const handleNewGame = async () => {
       try {
@@ -56,6 +58,10 @@ const CheckersGame: React.FC<CheckersGameProps> = ({ connectionID }) => {
   
   const handleReset = async () => {
       try {
+
+        setIsActive(false);
+        localStorage.setItem('isActive', 'false');
+        
           const response = await fetch(`${API_URL}/reset`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
@@ -168,12 +174,15 @@ useEffect(() => {
         const data = await response.json();
         setBoard(data.board);
         console.log(data.message || 'Game started successfully');
+
         console.log("Player color: " + selectedPlayer);
         localStorage.setItem('player_color', selectedPlayer.toString());
         setPlayerColor(selectedPlayer);
         localStorage.setItem('difficulty', selectedDifficulty.toString());
         setDifficulty(selectedDifficulty);
+        localStorage.setItem('isActive', 'true');
         setIsActive(true);
+
         //if player color is black handle AI move first 
         if(selectedPlayer == BLACK){
           makeAIMove();
