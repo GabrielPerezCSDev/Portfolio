@@ -13,12 +13,7 @@ const DifficultySelect: React.FC<DifficultySelectProps> = ({ onSubmit }) => {
     hard: 3,
   };
 
-  // Map color to numeric codes
-  const colorMap: { [key: string]: number } = {
-    red: 1,
-    black: 3,
-  };
-
+  
   // Local states for form selections
   const [selectedDifficulty, setSelectedDifficulty] = useState<string>('easy'); // default "easy"
   const [selectedColor, setSelectedColor] = useState<string>('red');           // default "red"
@@ -28,10 +23,10 @@ const DifficultySelect: React.FC<DifficultySelectProps> = ({ onSubmit }) => {
     event.preventDefault();
     // Convert the string keys to numeric codes
     const difficultyCode = difficultyMap[selectedDifficulty];
-    const colorCode = colorMap[selectedColor];
-    console.log(`Submitting difficulty ${difficultyCode} and color ${colorCode}`);
+    
+    console.log(`Submitting difficulty ${difficultyCode} and color ${1}`);
     // Pass numeric codes to the parent
-    onSubmit(difficultyCode, colorCode);
+    onSubmit(difficultyCode, 1);
   };
 
   return (
@@ -46,17 +41,6 @@ const DifficultySelect: React.FC<DifficultySelectProps> = ({ onSubmit }) => {
                     <option value="easy">Easy</option>
                     <option value="medium">Medium</option>
                     <option value="hard">Hard</option>
-                </select>
-            </div>
-
-            <div className="select-group">
-                <label>Color:</label>
-                <select
-                    value={selectedColor}
-                    onChange={(e) => setSelectedColor(e.target.value)}
-                >
-                    <option value="red">Red</option>
-                    <option value="black">Black</option>
                 </select>
             </div>
 
