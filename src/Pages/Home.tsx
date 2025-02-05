@@ -1,6 +1,7 @@
 import React from 'react';
 import Turnstile from '../components/tsx/Turnstile';
 import connecthub from '../assets/images/Featured-Projects/ConnectHub.jpg';
+import neuralCheckers from '../assets/images/Featured-Projects/neural-checkers.jpg';
 import pokemon from '../assets/images/Featured-Projects/Pokemon.jpg';
 import empires from '../assets/images/Featured-Projects/Empires.jpg';
 import filewizard from '../assets/images/Featured-Projects/File-Wizard.png';
@@ -15,6 +16,11 @@ const images = [
         title: 'ConnectHub',
         imageURL: connecthub,
         descriptionURL: 'A high-performance TCP server built in C that manages concurrent user connections through innovative socket pools. Features include bcrypt-secured authentication, session management, and a scalable architecture using POSIX threads and epoll for non-blocking I/O. Integrates SQLite for persistent user data and includes real-time communication between connected users.'
+    },
+    {
+        title: 'Neural Checkers',
+        imageURL: neuralCheckers,
+        descriptionURL: 'A high-performance Checkers implementation featuring a custom-built HTTP server in Java with thread-per-user architecture for concurrent game sessions. The AI opponent utilizes Monte Carlo Tree Search with multi-threaded simulation capabilities, while the production deployment includes HTTPS encryption and Nginx reverse proxy configuration on Google Cloud. Try the live demo in the Neural Checkers tab to challenge the AI, powered by concurrent game sessions and real-time move processing.'
     },
     {
         title: 'Ascension of Empires (Backend)',

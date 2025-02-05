@@ -7,6 +7,7 @@ import AscensionOfEmpires from './projects/AscencionOfEmpires'
 import StarfieldSkirmish from './projects/StarfieldSkirmish';
 import PokemonGame from './projects/PokemonSimulation';
 import PortfolioProject from './projects/Portfolio';
+import NeuralCheckers from './projects/Neural-Checkers';
 import './ProjectDetail.css';
 
 
@@ -18,6 +19,7 @@ const projectComponents: Record<string, React.FC> = {
     'starfield-skirmish': StarfieldSkirmish,
     'pokemon-game': PokemonGame,
     'portfolio': PortfolioProject,
+    'neural-checkers': NeuralCheckers,
     // Additional projects will be added here
 };
 

@@ -20,6 +20,8 @@ const getTechTags = (title: string): string[] => {
             return ['C', 'POSIX', 'TCP/IP', 'SQLite'];
         case 'File Wizard':
             return ['Rust', 'Electron', 'File System', 'SQLite'];
+        case 'Neural Checkers':
+            return ['Java', 'MCTS AI', 'Custom HTTP Server', 'Concurrent Programming'];
         case 'Pokemon Game':
             return ['C++', 'C', 'Data Structures', 'Algorithms'];
         case 'Ascension of Empires (Backend)':

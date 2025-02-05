@@ -9,6 +9,7 @@ import empires from '../../assets/images/Featured-Projects/Empires.jpg';
 import filewizard from '../../assets/images/Featured-Projects/File-Wizard.png';
 import logo from '../../assets/images/Featured-Projects/logo.png';
 import connecthub from '../../assets/images/Featured-Projects/ConnectHub.jpg';
+import neuralCheckers from '../../assets/images/Featured-Projects/neural-checkers.jpg';
 
 interface ProjectCardProps {
   title: string;
@@ -89,6 +90,14 @@ const Projects: React.FC = () => {
       image: connecthub,
       githubUrl: "https://github.com/GabrielPerezCSDev/ConnectHub",
       slug: "connect-hub"
+    },
+    {
+      title: "Neural Checkers",
+      description: "A sophisticated Checkers AI featuring Monte Carlo Tree Search and a custom HTTP server built from scratch, handling concurrent game sessions with thread-per-user architecture. Try the live demo in the Neural Checkers tab to challenge the AI, powered by concurrent game sessions and real-time move processing.",
+      technologies: ["Java", "MCTS AI", "Custom HTTP Server", "Concurrent Programming"],
+      image: neuralCheckers,
+      githubUrl: "https://github.com/GabrielPerezCSDev/neural-checkers",
+      slug: "neural-checkers"
     },
     {
       title: "Ascension of Empires",
