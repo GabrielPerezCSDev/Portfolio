@@ -61,7 +61,7 @@ const Turnstile: React.FC<TurnstileProps> = ({ imageDetailArray }) => {
                 <div className="header-section">
                     <h1 className="main-title">Featured Projects</h1>
                     <p className="subtitle">
-                        Explore my latest works in software development and game design
+                    Explore my latest projects in systems programming, AI, and high-performance software development! 😃
                     </p>
                 </div>
 

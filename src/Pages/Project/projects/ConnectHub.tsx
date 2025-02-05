@@ -6,7 +6,7 @@ import connecthub from '../../../assets/images/Featured-Projects/ConnectHub.jpg'
 
 const projectData: ProjectData = {
     title: "ConnectHub",
-    description: "A high-performance TCP server built in C that manages concurrent user connections through innovative socket pools.",
+    description: "A lightweight multiplayer TCP server that manages multiple user connections through organized socket pools and provides user authentication.",
     technologies: ["C", "POSIX", "TCP/IP", "SQLite"],
     githubUrl: "https://github.com/GabrielPerezCSDev/ConnectHub",
     slug: "connect-hub",
@@ -14,43 +14,46 @@ const projectData: ProjectData = {
     techStack: {
         backend: [
             "C11 Standard Implementation",
-            "POSIX Threads for Concurrency",
+            "POSIX Threads (Pthread)",
             "Epoll Event Library",
-            "TCP/IP Networking"
+            "TCP/IP Networking",
+            "GNU Make Build System"
         ],
         security: [
             "Bcrypt Password Hashing",
             "Session-based Authentication",
-            "SQLite3 Database",
-            "In-memory Session Cache"
+            "SQLite3 with Prepared Statements",
+            "In-memory Session Cache",
+            "Rate Limiting and Brute Force Protection"
         ]
     },
     features: [
         {
-            title: "Socket Pool Management",
-            description: "Implements a scalable architecture using socket buckets for efficient connection management and resource allocation."
+            title: "Router Architecture",
+            description: "Implements a central router that handles initial connections, authentication, and dynamically assigns users to available socket buckets for efficient resource management."
         },
         {
-            title: "Authentication System",
-            description: "Secure user authentication with session management, single-login enforcement, and encrypted password storage."
+            title: "Socket Pool Management",
+            description: "Organized socket buckets system for modular server scaling, with independent socket operations and comprehensive lifecycle management."
+        },
+        {
+            title: "Security Framework",
+            description: "Robust authentication system with bcrypt hashing, session management, single-login enforcement, and protection against brute force attacks."
         },
         {
             title: "Concurrent Operations",
-            description: "Multi-threaded design with thread-safe operations and non-blocking I/O for optimal performance."
-        },
-        {
-            title: "Resource Management",
-            description: "Dynamic memory allocation with comprehensive cleanup and monitoring of system resources."
+            description: "Multi-threaded design using POSIX threads with non-blocking I/O through epoll, ensuring optimal performance under high load conditions."
         }
     ],
     overview: [
-        "ConnectHub is a high-performance TCP server written in C that implements an innovative socket pool architecture for managing concurrent user connections. The server employs a sophisticated multi-threaded design with a central router that handles authentication and dynamically assigns users to socket buckets for efficient communication.",
-        "The system features robust security measures, including bcrypt password hashing and session-based authentication, alongside a SQLite database for persistent user management. Real-time communication is achieved through non-blocking I/O operations using the epoll event library, ensuring optimal performance even under high load conditions.",
-        "Built with modern C11 standards and POSIX compliance, ConnectHub demonstrates advanced systems programming concepts including thread-safe operations, resource management, and graceful error handling throughout its architecture."
+        "ConnectHub is a lightweight multiplayer TCP server written in C that implements an innovative socket pool architecture for managing concurrent user connections. The server employs a sophisticated thread-per-socket design with a central router that handles authentication and dynamically assigns users to socket buckets for efficient communication.",
+        "The system features comprehensive security measures, including bcrypt password hashing, session-based authentication, and rate limiting, alongside a SQLite database with prepared statements for secure user management. Real-time communication is achieved through non-blocking I/O operations using the epoll event library.",
+        "Built with modern C11 standards and POSIX compliance, ConnectHub demonstrates advanced systems programming concepts including thread-safe operations, resource management, and graceful error handling throughout its architecture. The project showcases practical implementation of concurrent programming principles and network security best practices."
     ],
     implementationDetails: [
-        "The server architecture is built around a main router component operating on a constant value for the port, which handles initial connections and user authentication. Successfully authenticated users are dynamically assigned to available socket buckets, each managing multiple concurrent connections through independent socket operations.",
-        "The system utilizes the epoll event library for efficient I/O multiplexing, allowing it to handle multiple connections without spawning excessive threads. This approach, combined with careful resource management and proper cleanup procedures, ensures stable performance and prevents memory leaks."
+        "The server architecture centers around a main router component operating on port 8080, handling initial connections and user authentication. Successfully authenticated users are dynamically assigned to available socket buckets, each managing multiple concurrent connections through independent socket operations.",
+        "Connection management is optimized using the epoll event library for efficient I/O multiplexing, allowing the server to handle multiple connections without spawning excessive threads. The system implements comprehensive resource management with dynamic memory allocation, bit array bucket tracking, and proper cleanup procedures.",
+        "Security is enforced through multiple layers, including IP-based and username-based attempt tracking, exponential backoff for failed authentications, and session key verification. The database implementation uses prepared statements for SQL operations and maintains an in-memory session cache for improved performance."
     ]
 };
 

@@ -77,7 +77,7 @@ const Projects: React.FC = () => {
   const projects = [
     {
       title: "File Wizard",
-      description: "A file management and visualization tool built with Rust, featuring multithreading for efficient directory searches and comprehensive metadata retrieval.",
+      description: "A Rust-powered file management tool with multithreading for high-performance directory scanning, metadata extraction, and structured visualization.",
       technologies: ["Rust", "CLI", "Multi-threading"],
       image: filewizard,
       githubUrl: "https://github.com/GabrielPerezCSDev/filewizard",
@@ -85,7 +85,7 @@ const Projects: React.FC = () => {
     },
     {
       title: "ConnectHub",
-      description: "A high-performance TCP server built in C that manages concurrent user connections through innovative socket pools, featuring secure authentication and real-time communication.",
+      description: "A lightweight multiplayer TCP server in C featuring organized socket pools, POSIX thread management, and epoll-based I/O multiplexing. Implements secure user authentication, rate limiting, and real-time communication.",
       technologies: ["C", "POSIX", "TCP/IP", "SQLite"],
       image: connecthub,
       githubUrl: "https://github.com/GabrielPerezCSDev/ConnectHub",

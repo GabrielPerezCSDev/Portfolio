@@ -10,12 +10,12 @@ const images = [
     {
         title: 'File Wizard',
         imageURL: filewizard,
-        descriptionURL: 'A file visualization and management tool that allows users to explore directories, retrieve file metadata, and manage files with a text-based UI. Built in Rust, it leverages multithreading for efficient directory searches and includes a logging system for error tracking.'
+        descriptionURL: 'A cross-platform file management and visualization tool with an Electron-based UI and a Rust-powered backend. Features multithreading for efficient directory traversal and metadata retrieval.'
     },
     {
         title: 'ConnectHub',
         imageURL: connecthub,
-        descriptionURL: 'A high-performance TCP server built in C that manages concurrent user connections through innovative socket pools. Features include bcrypt-secured authentication, session management, and a scalable architecture using POSIX threads and epoll for non-blocking I/O. Integrates SQLite for persistent user data and includes real-time communication between connected users.'
+        descriptionURL: 'A lightweight multiplayer TCP server in C featuring socket bucket architecture for efficient connection management. Implements POSIX threads for concurrency, epoll-based I/O multiplexing for non-blocking operations, and a comprehensive security system with bcrypt hashing, rate limiting, and session management. Uses SQLite with prepared statements for secure user data management and supports real-time communication between users.'
     },
     {
         title: 'Neural Checkers',
@@ -27,11 +27,6 @@ const images = [
         imageURL: empires,
         descriptionURL: 'A Spring Boot backend for a multiplayer strategy game featuring real-time WebSocket communication, dynamic game board generation, and comprehensive resource management. Includes user authentication, server-specific chat systems, in-game economy with shops, and scalable game sessions supporting multiple concurrent players.'
     },
-    {
-        title: 'Pokemon Game',
-        imageURL: pokemon,
-        descriptionURL: 'An immersive Pokemon simulation featuring procedurally generated maps, advanced pathfinding with Dijkstra\'s algorithm, and dynamic difficulty scaling. Built with C++, it includes custom heap data structures, CSV parsing for game data, and over 400 unique maps that increase in difficulty based on Manhattan distance from origin.'
-    }
 ];
 
 const Home: React.FC = () => {
